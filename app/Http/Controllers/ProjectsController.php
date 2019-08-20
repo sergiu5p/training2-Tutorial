@@ -34,6 +34,11 @@ class ProjectsController extends Controller
 
     }
 
+    public function destroy()
+    {
+
+    }
+
     public function store()
     {
         $project =new Project();
