@@ -55,13 +55,6 @@ class ProjectsController extends Controller
             'description' => request('description')
         ]);
 
-//        $project =new Project();
-//
-//        $project->title = request('title');
-//        $project->description = request('description');
-//
-//        $project->save();
-
         return redirect('/projects');
     }
 }
