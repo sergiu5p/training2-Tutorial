@@ -24,9 +24,11 @@ class ProjectsController extends Controller
 
     }
 
-    public function edit()
+    public function edit($id)
     {
-        return view('projects.edit');
+        $project = Project::find($id);
+
+        return view('projects.edit', compact('project'));
     }
 
     public function update()
