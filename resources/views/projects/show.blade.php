@@ -40,7 +40,7 @@
             <label for="Description" class="label">New Task</label>
 
             <div class="control">
-                <input type="text" class="input" name="description" placeholder="New Task">
+                <input type="text" class="input" name="description" placeholder="New Task" required>
             </div>
         </div>
 
