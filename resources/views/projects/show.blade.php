@@ -20,7 +20,11 @@
                         @csrf
 
                         <label for="completed" class="checkbox">
-                            <input type="checkbox" name="completed" onChange="this.form.submit()">
+                            <input
+                                type="checkbox"
+                                name="completed"
+                                onChange="this.form.submit()"
+                                {{ $task->completed ? 'checked' : '' }}>
                             {{ $task->description }}
                         </label>
                     </form>
