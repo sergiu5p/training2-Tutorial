@@ -13,6 +13,11 @@ class Task extends Model
         $this->update(compact('completed'));
     }
 
+    public function incomplete()
+    {
+        $this->complete(false);
+    }
+
     public function project()
     {
         return $this->belongsTo(Project::class);
