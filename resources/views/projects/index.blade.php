@@ -9,7 +9,9 @@
     <ul>
         @foreach ($projects as $project)
             <a href="/projects/{{ $project->id }}">
-                <li>{{ $project->title }}</li>
+                @if ($project->owner_id === auth()->id())
+                    <li>{{ $project->title }}</li>
+                @endif
             </a>
         @endforeach
     </ul>
