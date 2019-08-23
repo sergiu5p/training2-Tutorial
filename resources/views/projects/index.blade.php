@@ -8,10 +8,8 @@
 
     <ul>
         @foreach ($projects as $project)
-            <a href="/projects/{{ $project->id }}">
-                @if ($project->owner_id === auth()->id())
-                    <li>{{ $project->title }}</li>
-                @endif
+            <a href="/projects/{{ $project->owner_id }}">
+                <li>{{ $project->title }}</li>
             </a>
         @endforeach
     </ul>
