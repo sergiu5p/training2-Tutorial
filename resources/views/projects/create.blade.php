@@ -29,9 +29,7 @@
                     name="description"
                     class="textarea
                     {{ $errors->has('description') ? 'is-danger' : '' }}"
-                    required>
-                        {{ old('description') }}
-                </textarea>
+                    required>{{ old('description') }}</textarea>
             </div>
         </div>
 
