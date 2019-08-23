@@ -27,8 +27,6 @@ class ProjectsController extends Controller
 
     public function show(Project $project)
     {
-//        $this->authorize('update', $project);
-
         return view('projects.show', compact('project'));
     }
 
@@ -56,9 +54,7 @@ class ProjectsController extends Controller
 
         $attributes['owner_id'] = auth()->id();
 
-        $project = Project::create($attributes);
-
-        event(new ProjectCreated($project));
+        Project::create($attributes);
 
         return redirect('/projects');
     }
