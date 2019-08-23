@@ -9,7 +9,7 @@ class ProjectCreated
 {
     use Dispatchable, SerializesModels;
 
-    protected $project;
+    public $project;
 
     /**
      * Create a new event instance.
