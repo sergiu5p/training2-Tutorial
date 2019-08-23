@@ -10,6 +10,10 @@ class Project extends Model
 {
     protected $fillable = ['owner_id', 'title', 'description'];
 
+    protected $dispatchesEvents = [
+            'created' => ProjectCreated::class
+        ];
+
     public function owner()
     {
         return $this->belongsTo(User::class);
