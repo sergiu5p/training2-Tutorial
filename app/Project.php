@@ -10,17 +10,6 @@ class Project extends Model
 {
     protected $fillable = ['owner_id', 'title', 'description'];
 
-    public static function boot()
-    {
-        parent::boot();
-
-        static::created(function ($project) {
-            Mail::to($project->owner->email)->send(
-                new ProjectCreated($project)
-            );
-        });
-    }
-
     public function owner()
     {
         return $this->belongsTo(User::class);
