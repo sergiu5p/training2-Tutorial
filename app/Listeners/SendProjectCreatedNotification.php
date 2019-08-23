@@ -4,8 +4,6 @@ namespace App\Listeners;
 
 use App\Mail\ProjectCreated as ProjectCreatedMail;
 use App\Events\ProjectCreated;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Mail;
 
 class SendProjectCreatedNotification
