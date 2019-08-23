@@ -14,9 +14,9 @@ class ProjectsController extends Controller
 
     public function index()
     {
-        return view('projects.index', [
-            'projects' => auth()->user()->projects
-        ]);
+        $projects = Project::where('owner_id', auth()->id())->get();
+
+        return view('projects.index', compact('projects'));
     }
 
     public function create()
@@ -52,11 +52,12 @@ class ProjectsController extends Controller
     public function store()
     {
         $attributes = $this->validateProject();
+
         $attributes['owner_id'] = auth()->id();
 
         Project::create($attributes);
 
-            return redirect('/projects');
+        return redirect('/projects');
     }
 
     protected function validateProject()
